@@ -203,5 +203,5 @@ bindsym $mod+r mode "resize"
       urgent_workspace $base08 $base08 $base07
     }
 }
-#Test
+
 exec setxkbmap de
