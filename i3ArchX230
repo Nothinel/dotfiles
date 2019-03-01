@@ -83,6 +83,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+bindsym $mod+o exec i3lock --color=000000 
+
 # split in horizontal orientation
 bindsym $mod+z split h
 
@@ -203,5 +205,8 @@ bindsym $mod+r mode "resize"
       urgent_workspace $base08 $base08 $base07
     }
 }
-
+exec --no-startup-id i3-msg 'workspace 1; exec urxvt'
+exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
 exec setxkbmap de
+exec dropbox
