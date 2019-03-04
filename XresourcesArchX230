@@ -49,7 +49,11 @@ Xcursor.size: 16W
 URxvt.urgentOnBell: true
 URxvt.scrollBar: false
 URxvt.font: xft:hack:size=12
+!URxvt.font: xft:DejaVu Sans Mono:pixelsize=14
+!URxvt*font:     xft:mono:medium:size=14
+!URxvt.font: xft:monaco:size=10
 URxvt.depth: 24
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.perl-ext-common: default,matcher,vtwheel
+!URxvt.letterSpace: -5
