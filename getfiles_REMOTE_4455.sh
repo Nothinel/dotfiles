@@ -1,4 +1,5 @@
 #!/bin/bash
+
 cp ~/.config/i3/config ./i3ArchX230
 cp ~/.config/i3status/config ./i3statusArchX230
 cp ~/.vimrc ./vimrcArchX230
