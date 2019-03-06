@@ -1,0 +1,23 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+#alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
+#Pythonverzeichniss einbinden
+PYTHONPATH="${PYTHONPATH}:/home/kr80cora/Dropbox/Dokumente/Python"
+
+export PYTHONPATH
+
+alias tele='evince /home/kr80cora/Documents/Telephone/Telefonliste.pdf'
+
+set -o vi
+alias ls='lsd'
+shopt -s autocd
+alias mute='amixer set Master mute'
+alias unmute='amixer set Master unmute && amixer set Speaker unmute'
+
