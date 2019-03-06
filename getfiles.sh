@@ -8,3 +8,4 @@ cp ~/.config/vifm/colors/matrix.vifm ./vifmColorSchemeArchX230
 cp ~/.Xresources ./XresourcesArchX230
 cp ~/.bashrc ./bashrcArchX230
 cp ~/.bash_profile ./bash_profileArchX230
+

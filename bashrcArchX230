@@ -1,0 +1,17 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+
+export PATH=$PATH:~/scripts
+
+set -o vi
+#alias ls='ls --color=auto'
+alias ls='lsd'
+shopt -s autocd
+alias mute='amixer set Master mute'
+alias unmute='amixer set Master unmute && amixer set Speaker unmute'
+PS1='[\u@\h \W]\$ '

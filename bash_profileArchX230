@@ -1,0 +1,11 @@
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+export PATH=$PATH:~/scripts
+
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  startx
+fi
