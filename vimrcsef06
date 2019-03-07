@@ -102,6 +102,8 @@ endif
 " to avoid that)
 " Plug 'myusuf3/numbers.vim'
 
+"Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+
 " Plugins from vim-scripts repos:
 
 " Search results counter
@@ -192,7 +194,7 @@ set completeopt-=preview
 " save as sudo
 ca w!! w !sudo tee "%"
 
-" simple recursive grep
+" simple recursive 
 nmap ,r :Ack 
 nmap ,wr :Ack <cword><CR>
 
@@ -408,3 +410,17 @@ let g:airline#extensions#whitespace#enabled = 0
 "let g:airline_symbols.branch = '⭠'
 "let g:airline_symbols.readonly = '⭤'
 "let g:airline_symbols.linenr = '⭡'
+"
+filetype plugin indent on
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
+
+" Copy selected text to system clipboard (requires gvim/nvim/vim-x11 installed):
+	vnoremap <C-c> "+y
+    map <C-p> "+P
+
+" Navigating with guides
+	inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+	vnoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+    map <Space><Space> <Esc>/<++><Enter>"_c4l
+
