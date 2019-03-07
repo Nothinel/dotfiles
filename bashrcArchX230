@@ -13,5 +13,8 @@ set -o vi
 alias ls='lsd'
 shopt -s autocd
 alias mute='amixer set Master mute'
-alias unmute='amixer set Master unmute && amixer set Speaker unmute'
+alias unmute='amixer set Master unmute && amixer set Speaker unmute && amixer set Headphone unmute'
+alias vifm='vifm ./'
 PS1='[\u@\h \W]\$ '
+
+
