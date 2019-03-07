@@ -102,6 +102,8 @@ endif
 " to avoid that)
 " Plug 'myusuf3/numbers.vim'
 
+"Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+
 " Plugins from vim-scripts repos:
 
 " Search results counter
@@ -130,6 +132,9 @@ endif
 
 " no vi-compatible
 set nocompatible
+
+"set utf-8 enconding as standard
+set encoding=utf-8
 
 " allow plugins by file type (required for plugins!)
 filetype plugin on
@@ -192,7 +197,7 @@ set completeopt-=preview
 " save as sudo
 ca w!! w !sudo tee "%"
 
-" simple recursive grep
+" simple recursive 
 nmap ,r :Ack 
 nmap ,wr :Ack <cword><CR>
 
@@ -412,7 +417,11 @@ let g:airline#extensions#whitespace#enabled = 0
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-
+let g:Tex_MultipleCompileFormats = 'pdf'
+let g:Tex_DefaultTargetFormat = "pdf"
+let Tex_FoldedSections=""
+let Tex_FoldedEnvironments=""
+let Tex_FoldedMisc=""
 " Copy selected text to system clipboard (requires gvim/nvim/vim-x11 installed):
 	vnoremap <C-c> "+y
     map <C-p> "+P
@@ -421,3 +430,4 @@ let g:tex_flavor = "latex"
 	inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 	vnoremap <Space><Space> <Esc>/<++><Enter>"_c4l
     map <Space><Space> <Esc>/<++><Enter>"_c4l
+
