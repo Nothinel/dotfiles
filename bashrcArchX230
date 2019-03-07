@@ -15,6 +15,9 @@ shopt -s autocd
 alias mute='amixer set Master mute'
 alias unmute='amixer set Master unmute && amixer set Speaker unmute && amixer set Headphone unmute'
 alias vifm='vifm ./'
+alias nps='MakeNewPythonscript.sh'
+alias nls='MakeNewLaTeXscript.sh'
+alias nbs='MakeNewBashscript.sh'
 PS1='[\u@\h \W]\$ '
 
 
