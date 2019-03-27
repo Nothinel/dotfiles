@@ -99,12 +99,12 @@ set $ws1 "1: terminal"
 set $ws2 "2: firefox"
 set $ws3 "3: work"
 set $ws4 "4: thunderbird"
-set $ws5 "5"
+set $ws5 "5: jabref"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8: pidgin"
-set $ws9 "9: htop"
-set $ws10 "10"
+set $ws9 "9"
+set $ws10 "10: htop"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -188,20 +188,21 @@ exec xrandr --output HDMI2 --auto --right-of DP1
 
 exec i3-msg "workspace 1: terminal; exec i3-sensible-terminal"
 exec i3-msg "workspace 2: firefox; exec firefox"
-exec i3-msg "workspace 3: work; exec i3-sensible-terminal; exec jabref"
+exec i3-msg "workspace 3: work; exec i3-sensible-terminal"
 exec i3-msg "workspace 4: thunderbird; exec thunderbird"
+exec i3-msg "workspace 5: jabref; exec jabref"
 exec i3-msg "workspace 8: pidgin; exec pidgin"
-exec i3-msg "workspace 9: htop; exec gnome-terminal -e htop"
+exec i3-msg "workspace 10: htop; exec gnome-terminal -e htop"
 
 workspace $ws1 output DP1
 workspace $ws2 output HDMI2
 workspace $ws3 output DP1
 workspace $ws4 output HDMI2
-#workspace $ws5 output
+workspace $ws5 output DP1
 #workspace $ws6 output
 #workspace $ws7 output HDMI2
 workspace $ws8 output HDMI2
-workspace $ws9 output HDMI2
-#workspace $ws10 output
+#workspace $ws9 output HDMI2
+workspace $ws10 output HDMI2
 
 bindsym $mod+o exec i3lock --color=000000

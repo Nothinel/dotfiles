@@ -428,3 +428,7 @@ let Tex_FoldedMisc=""
 	vnoremap <Space><Space> <Esc>/<++><Enter>"_c4l
     map <Space><Space> <Esc>/<++><Enter>"_c4l
 
+" Insert guide here
+    inoremap ,g <Esc>i<++><Esc>
+    vnoremap ,g <Esc>i<++><Esc>
+    map ,g <Esc>i<++><Esc>

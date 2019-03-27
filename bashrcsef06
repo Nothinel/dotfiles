@@ -10,6 +10,7 @@ PS1='[\u@\h \W]\$ '
 
 #Pythonverzeichniss einbinden
 PYTHONPATH="${PYTHONPATH}:/home/kr80cora/Dropbox/Dokumente/Python"
+PATH=$PATH:~/scripts
 
 export PYTHONPATH
 
@@ -20,4 +21,6 @@ alias ls='lsd'
 shopt -s autocd
 alias mute='amixer set Master mute'
 alias unmute='amixer set Master unmute && amixer set Speaker unmute'
-
+alias nps='MakeNewPythonscript.sh'
+alias nls='MakeNewLaTeXscript.sh'
+alias nbs='MakeNewBashscript.sh'
