@@ -432,3 +432,6 @@ let Tex_FoldedMisc=""
     inoremap ,g <Esc>i<++><Esc>
     vnoremap ,g <Esc>i<++><Esc>
     map ,g <Esc>i<++><Esc>
+
+" Save current file and execute in
+    nnoremap <F9> :w<Enter>:!%:p<Enter>
