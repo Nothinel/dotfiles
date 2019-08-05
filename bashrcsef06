@@ -9,7 +9,7 @@
 PS1='[\u@\h \W]\$ '
 
 #Pythonverzeichniss einbinden
-PYTHONPATH="${PYTHONPATH}:/home/kr80cora/Dropbox/Dokumente/Python"
+PYTHONPATH="${PYTHONPATH}:/home/kr80cora/NextCloud/Dokumente/Python"
 PATH=$PATH:~/scripts
 
 export PYTHONPATH

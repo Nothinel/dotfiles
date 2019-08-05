@@ -1,2 +1,2 @@
-install ttf-hack as font for urxvt and i3
-
+old: install ttf-hack as font for urxvt and i3
+New: git clone https://aur.archlinux.org/nerd-fonts-source-code-pro.git
