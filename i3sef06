@@ -185,6 +185,7 @@ bar {
 }
 
 exec xrandr --output HDMI2 --auto --right-of DP1
+exec nextcloud
 
 exec i3-msg "workspace 1: terminal; exec i3-sensible-terminal"
 exec i3-msg "workspace 2: firefox; exec firefox"
@@ -192,7 +193,7 @@ exec i3-msg "workspace 3: work; exec i3-sensible-terminal"
 exec i3-msg "workspace 4: thunderbird; exec thunderbird"
 #exec i3-msg "workspace 5: jabref; exec jabref"
 exec i3-msg "workspace 8: pidgin; exec pidgin"
-exec i3-msg "workspace 10: htop; exec gnome-terminal -e htop"
+exec i3-msg "workspace 10: htop; exec urxvt -e htop"
 
 workspace $ws1 output DP1
 workspace $ws2 output HDMI2

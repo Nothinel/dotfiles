@@ -1,4 +1,4 @@
-
+let mapleader ="ö"
 
 "Use Clipboard
 noremap ;y "*y
@@ -18,3 +18,35 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "Autoindent newline the same as the one before
 set autoindent
+
+"Set german and English as languages for Spellchecking
+set spell
+set spelllang=en,de
+
+"Python syntax or else
+syntax on
+filetype indent plugin on
+
+"Spellchecking for .tex docs
+autocmd FileType tex setlocal spell spelllang=en_us
+"Spellchecking for .txt files
+autocmd BufRead,BufNewFile *.txt setlocal spell
+
+"LATEX stuff from vim-latexsuite package
+filetype plugin indent on
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+let g:Tex_MultipleCompileFormats = 'pdf'
+let g:Tex_DefaultTargetFormat = "pdf"
+
+"Get rid of folding
+let Tex_FoldedSections=""
+let Tex_FoldedEnvironments=""
+let Tex_FoldedMisc=""
+
+" Navigating with guides
+inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+map <leader><leader> <Esc>/<++><Enter>"_c4l
+
