@@ -200,10 +200,10 @@ workspace $ws2 output HDMI2
 workspace $ws3 output DP1
 workspace $ws4 output HDMI2
 workspace $ws5 output DP1
-#workspace $ws6 output
-#workspace $ws7 output HDMI2
+workspace $ws6 output HDMI2
+workspace $ws7 output DP1
 workspace $ws8 output HDMI2
-#workspace $ws9 output HDMI2
+workspace $ws9 output DP1
 workspace $ws10 output HDMI2
 
 bindsym $mod+o exec i3lock --color=000000

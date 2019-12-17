@@ -1,10 +1,10 @@
 let mapleader ="ö"
 
 "Use Clipboard
-noremap ;y "*y
-noremap ;p "*p
-noremap ;Y "+Y
-noremap ;P "+P
+noremap <leader>y "*y
+noremap <leader>p "*p
+noremap <leader>Y "+Y
+noremap <leader>P "+P
 
 "mache unechte Zeilenumbrücke sichtbar, bei langen Zeilen
 set breakindent
@@ -50,3 +50,8 @@ inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 map <leader><leader> <Esc>/<++><Enter>"_c4l
 
+
+" Execute current script by pressing F9
+nnoremap <F9> :w<Enter>:!%:p<Enter><Enter>
+
+" For Autocompletition with TAB install vim-supertab via pacman 
