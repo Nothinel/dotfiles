@@ -12,6 +12,18 @@ set showbreak=...
 
 "Zeilennummern
 set number
+set relativenumber
+
+"Cursor Zeile markieren
+hi CursorLine   cterm=NONE ctermbg=darkgreen ctermfg=black guibg=darkred guifg=white
+set cursorline
+
+"Begrenze Zeilen auf 80 Zeichen
+set textwidth=80
+"highlight ColorColumn ctermbg=green
+"Highlight Every Char beyond 80 with red
+:match ErrorMsg '\%>80v.\+'
+"set colorcolumn=80
 
 " remove unwanted trailing whitespaces in the whole file
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
