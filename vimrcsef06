@@ -1,4 +1,9 @@
 let mapleader ="ö"
+noremap <leader>y "*y
+noremap <leader>y "*y
+noremap <leader>y "*y
+noremap <leader>y "*y
+noremap <leader>y "*y
 
 "Use Clipboard
 noremap <leader>y "*y
@@ -62,8 +67,17 @@ inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 map <leader><leader> <Esc>/<++><Enter>"_c4l
 
+"Set Tab and Shiftwidth to 4 spaces (tab)
+set ts=4 sw=4
 
 " Execute current script by pressing F9
 nnoremap <F9> :w<Enter>:!%:p<Enter><Enter>
+
+" Kommentiere Blöcke Comment Blocks
+vnoremap <leader>%% :s/^%//<Enter>
+vnoremap <leader>% :s/^/%/<Enter>
+
+vnoremap <leader>## :s/^#//<Enter>
+vnoremap <leader># :s/^/#/<Enter>
 
 " For Autocompletition with TAB install vim-supertab via pacman 
