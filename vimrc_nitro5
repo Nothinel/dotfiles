@@ -36,18 +36,11 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 "Autoindent newline the same as the one before
 set autoindent
 
-"Set german and English as languages for Spellchecking
-set spell
-set spelllang=en,de
 
 "Python syntax or else
 syntax on
 filetype indent plugin on
 
-"Spellchecking for .tex docs
-autocmd FileType tex setlocal spell spelllang=en_us
-"Spellchecking for .txt files
-autocmd BufRead,BufNewFile *.txt setlocal spell
 
 "LATEX stuff from vim-latexsuite package
 filetype plugin indent on
