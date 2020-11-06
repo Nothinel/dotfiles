@@ -24,10 +24,14 @@ hi CursorLine   cterm=NONE ctermbg=darkgreen ctermfg=black guibg=darkred guifg=w
 set cursorline
 
 "Begrenze Zeilen auf 80 Zeichen
-set textwidth=80
+autocmd FileType tex set textwidth=80
+autocmd BufRead,BufNewFile *.txt set textwidth=80
+autocmd BufRead,BufNewFile *.py set textwidth=80
 "highlight ColorColumn ctermbg=green
 "Highlight Every Char beyond 80 with red
-:match ErrorMsg '\%>80v.\+'
+autocmd BufRead,BufNewFile *.txt :match ErrorMsg '\%>80v.\+'
+autocmd BufRead,BufNewFile *.py :match ErrorMsg '\%>80v.\+'
+autocmd BufRead,BufNewFile *.tex :match ErrorMsg '\%>80v.\+'
 "set colorcolumn=80
 
 " remove unwanted trailing whitespaces in the whole file
@@ -37,7 +41,7 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 set autoindent
 
 "Set german and English as languages for Spellchecking
-set spell
+"set spell
 set spelllang=en,de
 
 "Python syntax or else

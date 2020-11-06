@@ -15,7 +15,6 @@ PATH=$PATH:~/scripts/Auswertungsscripte/
 
 export PYTHONPATH
 
-alias tele='evince /home/kr80cora/Documents/Telephone/Telefonliste.pdf'
 
 set -o vi
 alias ls='lsd'
