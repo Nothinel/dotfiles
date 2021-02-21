@@ -38,7 +38,9 @@ autocmd BufRead,BufNewFile *.tex :match ErrorMsg '\%>80v.\+'
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "Autoindent newline the same as the one before
-set autoindent
+"set autoindent
+"Do it smarter than above
+set smartindent
 
 "Set german and English as languages for Spellchecking
 "set spell
@@ -78,10 +80,24 @@ set ts=4 sw=4
 nnoremap <F9> :w<Enter>:!%:p<Enter><Enter>
 
 " Kommentiere Blöcke Comment Blocks
-vnoremap <leader>%% :s/^%//<Enter>
-vnoremap <leader>% :s/^/%/<Enter>
+vnoremap <leader>%% :s/^%//<Enter>:noh<Enter>
+vnoremap <leader>% :s/^/%/<Enter>:noh<Enter>
 
-vnoremap <leader>## :s/^#//<Enter>
-vnoremap <leader># :s/^/#/<Enter>
+vnoremap <leader>## :s/^#//<Enter>:noh<Enter>
+vnoremap <leader># :s/^/#/<Enter>:noh<Enter>
+
+
+" jump to next empty line
+noremap <leader><Space><Space> /^$<Enter>
+
+ " Input Angstrom angstrom Angström angström
+inoremap <leader><leader>AA Å
+
+" Highlight all search pattern matches 
+set hlsearch
+
+" Show search results while typing
+set incsearch
+
 
 " For Autocompletition with TAB install vim-supertab via pacman 
