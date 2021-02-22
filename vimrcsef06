@@ -35,7 +35,7 @@ autocmd BufRead,BufNewFile *.tex :match ErrorMsg '\%>80v.\+'
 "set colorcolumn=80
 
 " remove unwanted trailing whitespaces in the whole file
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "Autoindent newline the same as the one before
 "set autoindent
@@ -48,7 +48,7 @@ set spelllang=en,de
 
 "Python syntax or else
 syntax on
-filetype indent plugin on
+"filetype indent plugin on
 
 "Spellchecking for .tex docs
 autocmd FileType tex setlocal spell spelllang=en_us
@@ -62,6 +62,9 @@ let g:tex_flavor = "latex"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 let g:Tex_MultipleCompileFormats = 'pdf'
 let g:Tex_DefaultTargetFormat = "pdf"
+" nnoremap <buffer> <leader><leader>e :call EvinceNearestLabel()<CR> this is
+" leftover junk from trying to make vim jump to the pdf at the correct
+" position
 
 "Get rid of folding
 let Tex_FoldedSections=""
