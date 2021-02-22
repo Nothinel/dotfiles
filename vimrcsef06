@@ -102,5 +102,4 @@ set hlsearch
 " Show search results while typing
 set incsearch
 
-
 " For Autocompletition with TAB install vim-supertab via pacman 
