@@ -89,6 +89,13 @@ vnoremap <leader>% :s/^/%/<Enter>:noh<Enter>
 vnoremap <leader>## :s/^#//<Enter>:noh<Enter>
 vnoremap <leader># :s/^/#/<Enter>:noh<Enter>
 
+" Make brackets and quotes easier by opening them and closing and jumping on
+" double open
+inoremap "" ""<++><Esc>4hi
+inoremap '' ''<++><Esc>4hi
+inoremap (( ()<++><Esc>4hi
+inoremap {{ {}<++><Esc>4hi
+inoremap [[ []<++><Esc>4hi
 
 " jump to next empty line
 noremap <leader><Space><Space> /^$<Enter>
