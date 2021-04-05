@@ -1,5 +1,5 @@
 let mapleader ="ö"
-
+ 
 "Use Clipboard
 noremap <leader>y "*y
 noremap <leader>p "*p
@@ -51,7 +51,7 @@ syntax on
 "filetype indent plugin on
 
 "Spellchecking for .tex docs
-autocmd FileType tex setlocal spell spelllang=en_us
+autocmd FileType tex setlocal spell spelllang=en_us,de
 "Spellchecking for .txt files
 autocmd BufRead,BufNewFile *.txt setlocal spell
 
@@ -118,7 +118,7 @@ set nojoinspaces
 
 " make Control and Backspave delete the previous word in insert mode
 " Steuerung Backspace Wort löschen 
-imap <C-BS> <C-W>
+inoremap <C-BS> <C-w>
 
 " Starte scrollen wenn man in die Nähe des Bodens kommt
 " offset gilt leider auch für H und L was mir nicht gefällt
