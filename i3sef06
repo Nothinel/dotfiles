@@ -184,7 +184,7 @@ bar {
         status_command i3status
 }
 
-exec xrandr --output HDMI2 --auto --right-of DP1
+exec xrandr --output DP2 --auto --right-of DP1
 exec nextcloud
 
 exec i3-msg "workspace 1: terminal; exec i3-sensible-terminal"
@@ -196,14 +196,14 @@ exec i3-msg "workspace 8: pidgin; exec pidgin"
 exec i3-msg "workspace 10: htop; exec urxvt -e htop"
 
 workspace $ws1 output DP1
-workspace $ws2 output HDMI2
+workspace $ws2 output DP2
 workspace $ws3 output DP1
-workspace $ws4 output HDMI2
+workspace $ws4 output DP2
 workspace $ws5 output DP1
-workspace $ws6 output HDMI2
+workspace $ws6 output DP2
 workspace $ws7 output DP1
-workspace $ws8 output HDMI2
+workspace $ws8 output DP2
 workspace $ws9 output DP1
-workspace $ws10 output HDMI2
+workspace $ws10 output DP2
 
 bindsym $mod+o exec i3lock --color=000000
