@@ -76,7 +76,9 @@ map <leader><leader> <Esc>/<++><Enter>"_c4l
 "Set Tab and Shiftwidth to 4 spaces (tab)
 set ts=4 sw=4
 
-" Execute current script by pressing F9
+" Execute current script by pressing F9 and imediatly close output
+nnoremap <F9> :w<Enter>:!%:p<Enter><Enter>
+" Execute current script by pressing F10 and wait for output
 nnoremap <F9> :w<Enter>:!%:p<Enter><Enter>
 
 " Kommentiere Blöcke Comment Blocks
