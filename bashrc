@@ -1,6 +1,6 @@
 #Make the beginning of the terminal line look good and short
 PS1='[\u@\h \W]\$ '
-
+#
 #
 #Path Stuff
 #
