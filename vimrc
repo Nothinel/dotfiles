@@ -103,3 +103,5 @@ set incsearch
 
 
 " For Autocompletition with TAB install vim-supertab via pacman 
+" To learn about vim plugin manager
+" https://linoxide.com/how-to-install-vim-plugins/
