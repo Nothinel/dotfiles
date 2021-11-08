@@ -79,7 +79,7 @@ set ts=4 sw=4
 " Execute current script by pressing F9 and imediatly close output
 nnoremap <F9> :w<Enter>:!%:p<Enter><Enter>
 " Execute current script by pressing F10 and wait for output
-nnoremap <F9> :w<Enter>:!%:p<Enter><Enter>
+nnoremap <F10> :w<Enter>:!%:p<Enter>
 
 " Kommentiere Blöcke Comment Blocks
 vnoremap <leader>%% :s/^%//<Enter>:noh<Enter>
@@ -100,8 +100,15 @@ set hlsearch
 
 " Show search results while typing
 set incsearch
-
+" Make vim look for files anywhere in the folder structure beneath current
+" directory
+set path+=**
+" Display all matching files when using autocomplete 
+set wildmenu
 
 " For Autocompletition with TAB install vim-supertab via pacman 
 " To learn about vim plugin manager
 " https://linoxide.com/how-to-install-vim-plugins/
+" call plug#begin()
+" Plug 'davidhalter/jedi-vim'
+" call plug#end()
