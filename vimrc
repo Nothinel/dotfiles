@@ -1,3 +1,5 @@
+"To make this take effect, you have to add the Umgebungsvariable HOME to
+"something like C:\Users\username
 let mapleader ="ö"
 noremap <leader>y "*y
 noremap <leader>y "*y
