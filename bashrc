@@ -16,7 +16,7 @@ export PYTHONPATH
 set -o vi
 alias ls='lsd'
 shopt -s autocd
-
+export EDITOR=vim
 #
 #SHORTCUTS
 #
