@@ -6,7 +6,8 @@
 [[ $- != *i* ]] && return
 
 #alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+#PS1='[┌\u@\h \W]\n└─\$ '
+PS1='[\u@\h \W]\n└─\$ '
 
 #Pythonverzeichniss einbinden
 PYTHONPATH="${PYTHONPATH}:/home/kr80cora/NextCloud/Dokumente/Python"
