@@ -129,3 +129,7 @@ inoremap <C-BS> <C-w>
 " For Autocompletition with TAB install vim-supertab via pacman 
 " Furthermore this option will power up the ctrl+p completition
 set complete=.,w,b,u,t,i,kspell
+
+" Colorscheme installed via the own package manager
+" packadd! dracula
+" colorscheme dracula

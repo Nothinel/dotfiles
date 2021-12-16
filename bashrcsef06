@@ -5,9 +5,17 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#alias ls='ls --color=auto'
+#Make the beginning of the terminal line look good and short
+#PS1='[\u@\h \W]\n\$ '
+#or beautiful with backgrounds and pointers, might need special font
 #PS1='[┌\u@\h \W]\n└─\$ '
-PS1='[\u@\h \W]\n└─\$ '
+#PS1='[\u@\h \W]\n└─\$ '
+seperator=$'\uE0B0' #arrow for cool factor
+PS1='\[\e[48;5;40m\]\[\e[30m\][\u@\h \W]\n\[\e[48;5;40m\]\[\e[30m\]└─\$\[\e[00m\]\[\e[38;5;40m\]'$seperator'\[\e[00m\]\[\e[48;5;00m\]'
+#\[\e[48;5;40m\] sets Background color (to some green in this case, try 46 for bright green)
+#\[\e[30m\] sets Text color (to black in this case)
+#\[\e[38;5;40m\] sets Text color (to green in this case) mainly to color the seperator
+#\[\e[00m\] resets color choices
 
 #Pythonverzeichniss einbinden
 PYTHONPATH="${PYTHONPATH}:/home/kr80cora/NextCloud/Dokumente/Python"
