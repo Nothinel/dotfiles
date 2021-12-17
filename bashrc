@@ -4,7 +4,7 @@
 #PS1='[┌\u@\h \W]\n└─\$ '
 #PS1='[\u@\h \W]\n└─\$ '
 seperator=$'\uE0B0' #arrow for cool factor
-PS1='\[\e[48;5;40m\]\[\e[30m\]┌ \u@\h \W\[\e[00m\]\n\[\e[48;5;40m\]\[\e[30m\]└─\$\[\e[00m\]\[\e[38;5;40m\]'$seperator'\[\e[00m\]\[\e[48;5;00m\]'
+PS1='\[\e[48;5;34m\]\[\e[30m\]┌ \u\[\e[38;5;34m\]\[\e[48;5;18m\]'$seperator'\[\e[38;5;1m\]\h\[\e[38;5;20m\]\[\e[48;5;1m\]'$seperator'\[\e[38;5;232m\]\w\[\e[00m\]\[\e[38;5;1m\]'$seperator'\n\[\e[48;5;34m\]\[\e[30m\]└─\$\[\e[00m\]\[\e[38;5;34m\]'$seperator'\[\e[00m\]\[\e[48;5;00m\]\[\e[38;5;34m\]'
 #\[\e[48;5;40m\] sets Background color (to some green in this case, try 46 for bright green)
 #\[\e[30m\] sets Text color (to black in this case)
 #\[\e[38;5;40m\] sets Text color (to green in this case) mainly to color the seperator
