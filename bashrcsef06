@@ -21,22 +21,25 @@ alias unmute='amixer set Master unmute && amixer set Speaker unmute'
 alias nps='MakeNewPythonscript.sh'
 alias nls='MakeNewLaTeXscript.sh'
 alias nbs='MakeNewBashscript.sh'
+alias rps1='source ~/scripts/reset_ps1.sh'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/kr80cora/xraylarch/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/kr80cora/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/kr80cora/xraylarch/etc/profile.d/conda.sh" ]; then
-        . "/home/kr80cora/xraylarch/etc/profile.d/conda.sh"
+    if [ -f "/home/kr80cora/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kr80cora/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/kr80cora/xraylarch/bin:$PATH"
+        export PATH="/home/kr80cora/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# automatically activate conda each start up of a bash with the xraylarch env
+conda activate xraylarch
 
 PATH="/home/kr80cora/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/kr80cora/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

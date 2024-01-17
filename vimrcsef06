@@ -26,7 +26,7 @@ set cursorline
 "Begrenze Zeilen auf 80 Zeichen
 autocmd FileType tex set textwidth=80
 autocmd BufRead,BufNewFile *.txt set textwidth=80
-autocmd BufRead,BufNewFile *.py set textwidth=80
+"autocmd BufRead,BufNewFile *.py set textwidth=80
 "highlight ColorColumn ctermbg=green
 "Highlight Every Char beyond 80 with red
 autocmd BufRead,BufNewFile *.txt :match ErrorMsg '\%>80v.\+'
@@ -63,9 +63,13 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/afte
 let g:Tex_MultipleCompileFormats = 'pdf'
 let g:Tex_DefaultTargetFormat = "pdf"
 autocmd filetype tex inoremap <buffer> <leader>au \autoref{}<++><Esc>4hi
+autocmd filetype tex inoremap <buffer> <leader>ci ~\cite{}<++><Esc>4hi
 " nnoremap <buffer> <leader><leader>e :call EvinceNearestLabel()<CR> this is
 " leftover junk from trying to make vim jump to the pdf at the correct
 " position
+
+" Change all Umlaute to LaTeX konform ways
+noremap <leader>uu :%s/ß/{\\ss}/ge<Enter>:%s/ä/{\\"a}/ge<Enter>:%s/Ä/{\\"A}/ge<Enter>:%s/ö/{\\"o}/ge<Enter>:%s/Ö/{\\"O}/ge<Enter>:%s/ü/{\\"u}/ge<Enter>:%s/Ü/{\\"U}/ge<Enter>
 
 "Get rid of folding
 let Tex_FoldedSections=""
@@ -119,6 +123,7 @@ set incsearch
 " directory
 set path+=**
 " Display all matching files when using autocomplete 
+set wildmode=longest,list,full
 set wildmenu
 
 " don't create two spaces after . ! and ? when reformatting
@@ -127,6 +132,10 @@ set nojoinspaces
 " make Control and Backspave delete the previous word in insert mode
 " Steuerung Backspace Wort löschen 
 inoremap <C-BS> <C-w>
+
+" make sentence its own block
+" noremap <leader>se )i<Enter><Esc>(v)bgq
+noremap <leader>se )i<Enter><Esc>(visgq
 
 " Starte scrollen wenn man in die Nähe des Bodens kommt
 " offset gilt leider auch für H und L was mir nicht gefällt
@@ -140,4 +149,5 @@ set complete=.,w,b,u,t,i,kspell
 " packadd! dracula
 " colorscheme dracula
 
-set fileencodings=utf-8
+
+set fileencoding=utf-8
