@@ -1,7 +1,7 @@
 install ttf-hack as font for urxvt and i3
 
 # scaling
-xrandr --output screen-name --scale 0.8x0.8
+xrandr --output eDP --scale 0.8x0.8
 
 
 # function keys
@@ -14,6 +14,9 @@ to use function keys, install xbindkeys and use the .xbindkeysrc
 # programs
 
 gvim (so the clipboard works)
+rxvt-unicode, urxvt-perls, AUR urxvt-keyboard-select
+libreoffice-still
+texlive
 
 ## Audio
 pulseaudio pulseaudio-bluetooth
