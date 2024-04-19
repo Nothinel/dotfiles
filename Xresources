@@ -35,8 +35,10 @@ URxvt.font: xft:SauceCodePro Nerd Font Mono:size=15
 URxvt.depth: 24
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
+! install urxvt-resize-font-git from the AUR for resize-font to work
 URxvt.perl-ext-common: default,vtwheel,resize-font,keyboard-select
 ! url-select
+! install urxvt-perls to make url select work with ALT+u
 URxvt.perl-ext: default,url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
