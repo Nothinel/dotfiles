@@ -22,4 +22,12 @@ texlive
 pulseaudio pulseaudio-bluetooth
 pasystray (volumecontrol on the statusbar)
 
+# screen blanking 
+/etc/X11/xorg.conf.d/30-dpms.conf
 
+Section "ServerFlags"     
+	Option "StandbyTime" "90"     
+	Option "SuspendTime" "90"     
+	Option "OffTime" "90"     
+	Option "BlankTime" "90"
+EndSection
