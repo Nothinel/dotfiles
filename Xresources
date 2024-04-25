@@ -47,3 +47,8 @@ URxvt.url-select.underline: true
 URxvt.keysym.C-v: perl:keyboard-select:activate
 URxvt.keysym.C-s: perl:keyboard-select:search
 URxvt.keyboard-select.clipboard: true
+! Restore Ctrl+Shift+(c|v)
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
