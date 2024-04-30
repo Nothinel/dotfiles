@@ -15,7 +15,11 @@ export PYTHONPATH
 
 set -o vi
 alias ls='lsd'
-shopt -s autocd
+#shopt -s autocd
+#use zoxide as cd
+eval "$(zoxide init --cmd cd bash)"
+#use fzf
+eval "$(fzf --bash)"
 alias mute='amixer set Master mute'
 alias unmute='amixer set Master unmute && amixer set Speaker unmute'
 alias nps='MakeNewPythonscript.sh'
@@ -60,4 +64,5 @@ PS1='\[\e[48;5;34m\e[38;5;232m\]┌${CONDA_PROMPT_MODIFIER_MOD}\u\[\e[48;5;18m\e
 #\e[48;5;34m sets Background color in Ansi code (to some green in this case, try 46 for bright green, 232 for Black, 18 for blue)
 #\[\e[38;5;40m\] sets Text color (to green in this case) mainly to color the seperator
 #\e[48;2;0;0;0m sets Background color for RGB values 0;0;0
+export PROMPT_DIRTRIM=2
 
