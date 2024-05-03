@@ -6,7 +6,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 13
+#font pango:monospace 12
+font xft:SauceCodePro Nerd Font Mono 13
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -69,16 +70,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: terminal"
-set $ws2 "2: firefox"
-set $ws3 "3: work"
-set $ws4 "4: thunderbird"
-set $ws5 "5: jabref"
+set $ws1 "1:term"
+set $ws2 "2:firefox"
+set $ws3 "3:work"
+set $ws4 "4:thunderbird"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8: pidgin"
+set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: htop"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -156,17 +157,27 @@ bar {
 }
 
 #example of autorun commands for multiple screens displays monitors
-exec xrandr --output HDMI2 --auto --right-of DP1
+#exec xrandr --output HDMI2 --auto --right-of DP1
+exec xrandr --output eDP --scale 0.8x0.8
 #autorun background stuff
 exec nextcloud
 
-exec i3-msg "workspace 1: terminal; exec i3-sensible-terminal"
-exec i3-msg "workspace 2: firefox; exec firefox"
-exec i3-msg "workspace 3: work; exec i3-sensible-terminal"
-exec i3-msg "workspace 4: thunderbird; exec thunderbird"
+exec i3-msg "workspace 10; exec nm-applet" #nm-applet first, so Network is priority
+exec i3-msg "workspace 1:term; exec i3-sensible-terminal"
+exec i3-msg "workspace 2:firefox; exec firefox"
+exec i3-msg "workspace 3:work; exec i3-sensible-terminal"
+exec i3-msg "workspace 4:thunderbird; exec thunderbird"
 #exec i3-msg "workspace 5: jabref; exec jabref"
-exec i3-msg "workspace 8: pidgin; exec signal"
-exec i3-msg "workspace 10: htop; exec urxvt -e htop"
+exec i3-msg "workspace 8; exec signal"
+exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
+exec i3-msg "workspace 10; exec xbindkeys"
+exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && urxvt -e htop"
+# audio
+exec i3-msg "workspace 10; exec pasystray"
+#exec i3-msg "workspace 10; exec urxvt -e alsamixer"
+exec i3-msg "workspace 10; exec pavucontrol"
+
+
 
 #examples of sending the uneven workspaces to the left and the even nubered ones 
 #to the right screen display monitor
@@ -182,4 +193,4 @@ exec i3-msg "workspace 10: htop; exec urxvt -e htop"
 #workspace $ws10 output HDMI2
 
 #Example for locking the screen
-#bindsym $mod+o exec i3lock --color=000000
+bindsym $mod+o exec i3lock --color=000000

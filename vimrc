@@ -1,9 +1,5 @@
 let mapleader ="ö"
 noremap <leader>y "*y
-noremap <leader>y "*y
-noremap <leader>y "*y
-noremap <leader>y "*y
-noremap <leader>y "*y
 
 "Use Clipboard
 noremap <leader>y "*y
@@ -115,7 +111,7 @@ set wildmenu
 
 " For Autocompletition with TAB install vim-supertab via pacman 
 " To learn about vim plugin manager
-" https://linoxide.com/how-to-install-vim-plugins/
-" call plug#begin()
-" Plug 'davidhalter/jedi-vim'
-" call plug#end()
+" https://github.com/junegunn/vim-plug
+call plug#begin()
+Plug 'davidhalter/jedi-vim'
+call plug#end()
