@@ -159,6 +159,7 @@ bar {
 exec xrandr --output HDMI2 --auto --right-of DP1
 #autorun background stuff
 exec nextcloud
+exec dunst
 
 exec i3-msg "workspace 1: terminal; exec i3-sensible-terminal"
 exec i3-msg "workspace 2: firefox; exec firefox"
