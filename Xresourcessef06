@@ -60,6 +60,6 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 ! keyboard-select part of urxvt-perls
-URxvt.keysym.C-v: perl:keyboard-select:activate
+URxvt.keysym.Meta-v: perl:keyboard-select:activate
 URxvt.keysym.C-s: perl:keyboard-select:search
 URxvt.keyboard-select.clipboard: true
