@@ -72,6 +72,24 @@
 #decrease brightness
 "xbacklight -dec 10"
 	XF86MonBrightnessDown
+
+# Increase volume
+#"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+"~/scripts/increase_volume.sh"
+   XF86AudioRaiseVolume
+
+# Decrease volume
+#"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+"~/scripts/decrease_volume.sh"
+   XF86AudioLowerVolume
+
+# toggle volume mute
+#"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+"~/scripts/mute_volume.sh"
+   XF86AudioMute
+
+"arandr"
+	Mod4 + p
 ##################################
 # End of xbindkeys configuration #
 ##################################

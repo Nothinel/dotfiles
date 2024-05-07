@@ -30,7 +30,7 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = bottom-right
 
     # Offset from the origin
     offset = 10x50
@@ -137,8 +137,8 @@
 
     ### Text ###
 
-    font = Monospace 8
-
+    #font = Monospace 14
+	font = xft:SauceCodePro Nerd Font Mono 14
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
     line_height = 0
