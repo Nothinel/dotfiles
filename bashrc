@@ -33,6 +33,7 @@ alias rps1='source ~/scripts/reset_ps1.sh'
 #
 #SHORTCUTS
 alias cax='conda activate xraylarch && rps1'
+alias showbrightness='cat /sys/class/backlight/amdgpu_bl1/brightness'
 #
 #Get these scripts from your scripts git into ~/scripts and be happy
 alias nps='MakeNewPythonscript.sh'

@@ -161,6 +161,8 @@ bar {
 exec xrandr --output eDP --scale 0.8x0.8
 #autorun background stuff
 exec nextcloud
+exec xbindkeys
+exec dunst
 
 exec i3-msg "workspace 10; exec nm-applet" #nm-applet first, so Network is priority
 exec i3-msg "workspace 1:term; exec i3-sensible-terminal"
@@ -170,7 +172,6 @@ exec i3-msg "workspace 4:thunderbird; exec thunderbird"
 #exec i3-msg "workspace 5: jabref; exec jabref"
 exec i3-msg "workspace 8; exec signal"
 exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
-exec i3-msg "workspace 10; exec xbindkeys"
 exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && urxvt -e htop"
 # audio
 exec i3-msg "workspace 10; exec pasystray"
