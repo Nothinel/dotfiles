@@ -107,6 +107,7 @@ set incsearch
 " directory
 set path+=**
 " Display all matching files when using autocomplete 
+set wildmode=longest,list,full
 set wildmenu
 
 " For Autocompletition with TAB install vim-supertab via pacman 
