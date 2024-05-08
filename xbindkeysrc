@@ -66,11 +66,13 @@
 #  Control + b:2 + Release
 
 #increse brightness
-"xbacklight -inc 10"
+#"xbacklight -inc 10"
+"brightness_increase.sh"
 	XF86MonBrightnessUp
 
 #decrease brightness
-"xbacklight -dec 10"
+#"xbacklight -dec 10"
+"brightness_decrease.sh"
 	XF86MonBrightnessDown
 
 # Increase volume
