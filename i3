@@ -159,6 +159,11 @@ bar {
 
 exec i3-msg "workspace 10; exec nm-applet" #nm-applet first, so Network is priority
 exec i3-msg "workspace 1:term; exec i3-sensible-terminal"
+# save window config as it currently is to file:
+# i3-save-tree --workspace 2:firefox > ~/.config/i3/workspace-1.json
+# now edit manually: remove all comments (// lines), names= lines and chose which criteria to swallow
+# see i3 manual
+exec --no-startup-id "i3-msg 'workspace 2:firefox; append_layout /home/konrad/.config/i3/workspace-1.json'"
 exec i3-msg "workspace 2:firefox; exec firefox"
 exec i3-msg "workspace 3:work; exec i3-sensible-terminal"
 exec i3-msg "workspace 4:thunderbird; exec thunderbird"
