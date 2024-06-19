@@ -169,7 +169,7 @@ exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnom
 # audio
 exec i3-msg "workspace 10; exec pasystray"
 #exec i3-msg "workspace 10; exec urxvt -e alsamixer"
-exec i3-msg "workspace 10; exec pavucontrol"
+#exec i3-msg "workspace 10; exec pavucontrol"
 exec i3-msg "workspace 8; exec signal-desktop"
 
 
@@ -178,8 +178,8 @@ exec i3-msg "workspace 8; exec signal-desktop"
 exec xrandr --output eDP --scale 0.8x0.8
 #autorun background stuff
 exec nextcloud
-exec --no-startup-id xbindkeys
-exec --no-startup-id "/home/konrad/scripts/bindkeys.sh"
+#exec --no-startup-id xbindkeys
+#exec --no-startup-id "/home/konrad/scripts/bindkeys.sh"
 # notifications
 exec dunst
 
