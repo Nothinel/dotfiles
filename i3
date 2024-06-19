@@ -156,13 +156,6 @@ bar {
         status_command i3status
 }
 
-#example of autorun commands for multiple screens displays monitors
-#exec xrandr --output HDMI2 --auto --right-of DP1
-exec xrandr --output eDP --scale 0.8x0.8
-#autorun background stuff
-exec nextcloud
-exec xbindkeys
-exec dunst
 
 exec i3-msg "workspace 10; exec nm-applet" #nm-applet first, so Network is priority
 exec i3-msg "workspace 1:term; exec i3-sensible-terminal"
@@ -170,15 +163,25 @@ exec i3-msg "workspace 2:firefox; exec firefox"
 exec i3-msg "workspace 3:work; exec i3-sensible-terminal"
 exec i3-msg "workspace 4:thunderbird; exec thunderbird"
 #exec i3-msg "workspace 5: jabref; exec jabref"
-exec i3-msg "workspace 8; exec signal"
 exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
-exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && urxvt -e htop"
+#exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && urxvt -e htop"
+exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && urxvt -e bpytop"
 # audio
 exec i3-msg "workspace 10; exec pasystray"
 #exec i3-msg "workspace 10; exec urxvt -e alsamixer"
 exec i3-msg "workspace 10; exec pavucontrol"
+exec i3-msg "workspace 8; exec signal-desktop"
 
 
+#example of autorun commands for multiple screens displays monitors
+#exec xrandr --output HDMI2 --auto --right-of DP1
+exec xrandr --output eDP --scale 0.8x0.8
+#autorun background stuff
+exec nextcloud
+exec --no-startup-id xbindkeys
+exec --no-startup-id "/home/konrad/scripts/bindkeys.sh"
+# notifications
+exec dunst
 
 #examples of sending the uneven workspaces to the left and the even nubered ones 
 #to the right screen display monitor

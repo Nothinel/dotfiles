@@ -64,6 +64,12 @@ let Tex_FoldedSections=""
 let Tex_FoldedEnvironments=""
 let Tex_FoldedMisc=""
 
+" Change all Umlaute to LaTeX konform ways
+noremap <leader>uu :%s/ß/{\\ss}/ge<Enter>:%s/ä/{\\"a}/ge<Enter>:%s/Ä/{\\"A}/ge<Enter>:%s/ö/{\\"o}/ge<Enter>:%s/Ö/{\\"O}/ge<Enter>:%s/ü/{\\"u}/ge<Enter>:%s/Ü/{\\"U}/ge<Enter>
+
+" make sentence its own block
+noremap <leader>se )i<Enter><Esc>(visgq
+
 " Navigating with guides
 inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
@@ -111,6 +117,7 @@ set wildmode=longest,list,full
 set wildmenu
 
 " For Autocompletition with TAB install vim-supertab via pacman 
+set complete=.,w,b,u,t,i,kspell
 " To learn about vim plugin manager
 " https://github.com/junegunn/vim-plug
 call plug#begin()
