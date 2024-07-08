@@ -60,6 +60,7 @@ autocmd BufRead,BufNewFile *.txt setlocal spell
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
+" let g:tex_flavor = "lualatex"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 let g:Tex_MultipleCompileFormats = 'pdf'
 let g:Tex_DefaultTargetFormat = "pdf"
@@ -78,9 +79,9 @@ let Tex_FoldedEnvironments=""
 let Tex_FoldedMisc=""
 
 " Navigating with guides
-inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-map <leader><leader> <Esc>/<++><Enter>"_c4l
+inoremap <leader><leader> <Esc>/<+.*+><Enter>"_cf>
+vnoremap <leader><leader> <Esc>/<+.*+><Enter>"_cf>
+map <leader><leader> <Esc>/<+.*+><Enter>"_cf>
 
 "Set Tab and Shiftwidth to 4 spaces (tab)
 set ts=4 sw=4
@@ -109,7 +110,7 @@ inoremap [[ []<++><Esc>4hi
 noremap <leader><Space><Space> /^$<Enter>
 
  " Input Angstrom angstrom Angström angström
-inoremap <leader><leader>AA Å
+inoremap <leader>AA Å
 
 
 "this is a test text
@@ -152,5 +153,6 @@ set complete=.,w,b,u,t,i,kspell
 
 noremap <leader>cp :! cp ExPhyII_SoSe_2024.pdf ../2024/ExPhyII_SoSe_2024_Blatt
 noremap <leader>ca :! ./copyall2Nextcloud.sh
+noremap <leader>blk :! black --line-length 79 %
 
 set fileencoding=utf-8

@@ -188,6 +188,7 @@ exec i3-msg "workspace 4: thunderbird; exec thunderbird"
 #exec i3-msg "workspace 5: jabref; exec jabref"
 exec i3-msg "workspace 8: pidgin; exec pidgin"
 exec i3-msg "workspace 10: htop; exec urxvt -e htop"
+exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
 
 workspace $ws1 output DP2
 workspace $ws2 output DP1
