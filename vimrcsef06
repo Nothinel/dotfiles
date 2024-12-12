@@ -151,7 +151,8 @@ set complete=.,w,b,u,t,i,kspell
 " packadd! dracula
 " colorscheme dracula
 
-noremap <leader>cp :! cp ExPhyII_SoSe_2024.pdf ../2024/ExPhyII_SoSe_2024_Blatt
+" noremap <leader>cp :! cp ExPhyII_SoSe_2024.pdf ../2024/ExPhyII_SoSe_2024_Blatt
+noremap <leader>cp :! cp ExPhyI_WiSe_2024.pdf ../2024/ExPhyI_WiSe_2024_Blatt
 noremap <leader>ca :! ./copyall2Nextcloud.sh
 noremap <leader>blk :! black --line-length 79 %
 

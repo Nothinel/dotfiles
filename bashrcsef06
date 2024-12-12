@@ -26,6 +26,7 @@ alias nps='MakeNewPythonscript.sh'
 alias nls='MakeNewLaTeXscript.sh'
 alias nbs='MakeNewBashscript.sh'
 alias rps1='source ~/scripts/reset_ps1.sh'
+alias libre='libreoffice'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
