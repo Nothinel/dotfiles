@@ -121,5 +121,5 @@ set complete=.,w,b,u,t,i,kspell
 " To learn about vim plugin manager
 " https://github.com/junegunn/vim-plug
 call plug#begin()
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 call plug#end()

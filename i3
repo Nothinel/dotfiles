@@ -154,10 +154,15 @@ client.urgent $urgent-bg-color $urgent-bg-color $text-color #00ff00
 # finds out, if available)
 bar {
         status_command i3status
+		output eDP
+}
+bar {
+	output nonprimary
 }
 
 
 exec i3-msg "workspace 10; exec nm-applet" #nm-applet first, so Network is priority
+exec i3-msg "workspace 10; exec blueman-applet"
 exec i3-msg "workspace 1:term; exec i3-sensible-terminal"
 # save window config as it currently is to file:
 # i3-save-tree --workspace 2:firefox > ~/.config/i3/workspace-1.json
@@ -168,7 +173,8 @@ exec i3-msg "workspace 2:firefox; exec firefox"
 exec i3-msg "workspace 3:work; exec i3-sensible-terminal"
 exec i3-msg "workspace 4:thunderbird; exec thunderbird"
 #exec i3-msg "workspace 5: jabref; exec jabref"
-exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
+#exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
+exec i3-msg "workspace 10; exec xss-lock -- i3lock -i ~/.config/i3/flip.png --color=000000"
 #exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && urxvt -e htop"
 exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && urxvt -e bpytop"
 # audio
@@ -202,4 +208,4 @@ exec dunst
 #workspace $ws10 output HDMI2
 
 #Example for locking the screen
-bindsym $mod+o exec i3lock --color=000000
+bindsym $mod+o exec i3lock -i ~/.config/i3/flip.png --color=000000

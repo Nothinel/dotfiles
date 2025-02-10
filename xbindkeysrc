@@ -90,6 +90,7 @@
 "~/scripts/mute_volume.sh"
    XF86AudioMute
 
+# activate arandr to connect external display
 "xrandr --output eDP --scale 1x1 && arandr"
 	Mod4 + p
 ##################################

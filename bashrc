@@ -16,7 +16,7 @@ alias grep='grep --color=auto'
 #Path Stuff
 #
 #Pythonverzeichniss einbinden
-#PYTHONPATH="${PYTHONPATH}:/home/kr80cora/NextCloud/Dokumente/Python"
+#PYTHONPATH="${PYTHONPATH}:/home/konrad/NextCloud/Dokumente/Python"
 #PATH=$PATH:~/scripts/Auswertungsscripte/
 PATH=$PATH:~/scripts
 export PYTHONPATH
@@ -36,6 +36,7 @@ alias ls='lsd'
 shopt -s autocd
 export EDITOR=vim
 alias rps1='source ~/scripts/reset_ps1.sh'
+alias hibernate='sudo systemctl hibernate'
 #
 #SHORTCUTS
 alias cax='conda activate xraylarch && rps1'
@@ -47,21 +48,6 @@ alias nls='MakeNewLaTeXscript.sh'
 alias nbs='MakeNewBashscript.sh'
 
 eval "$(zoxide init --cmd cd bash)"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/konrad/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/konrad/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/konrad/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/konrad/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 #Make the beginning of the terminal line look good and short
 #PS1='[\u@\h \W]\n\$ '
