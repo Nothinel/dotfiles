@@ -186,7 +186,7 @@ exec i3-msg "workspace 8; exec signal-desktop"
 
 #example of autorun commands for multiple screens displays monitors
 #exec xrandr --output HDMI2 --auto --right-of DP1
-exec xrandr --output eDP --scale 0.8x0.8
+exec xrandr --output eDP --scale 0.9x0.9
 #autorun background stuff
 exec nextcloud
 #exec --no-startup-id xbindkeys
