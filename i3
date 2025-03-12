@@ -160,6 +160,9 @@ bar {
 	output nonprimary
 }
 
+# Move the current workspace to the next output
+# (effectively toggles when you only have two outputs)
+bindsym $mod+x move workspace to output next
 
 exec i3-msg "workspace 10; exec nm-applet" #nm-applet first, so Network is priority
 exec i3-msg "workspace 10; exec blueman-applet"
