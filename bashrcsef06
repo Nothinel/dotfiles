@@ -27,6 +27,8 @@ alias nls='MakeNewLaTeXscript.sh'
 alias nbs='MakeNewBashscript.sh'
 alias rps1='source ~/scripts/reset_ps1.sh'
 alias libre='libreoffice'
+alias untar='tar -xvf'
+alias quickjupyter='jupyter lab ~/NextCloud/Dokumente/Python/Calculator.ipynb'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

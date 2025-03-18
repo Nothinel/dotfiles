@@ -96,7 +96,7 @@ set $ws7 "7"
 set $ws8 "8: chat"
 # set $ws8 "8: pidgin"
 set $ws9 "9"
-set $ws10 "10: htop"
+set $ws10 "10: top"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -189,7 +189,7 @@ exec i3-msg "workspace 4: thunderbird; exec thunderbird"
 #exec i3-msg "workspace 5: jabref; exec jabref"
 #exec i3-msg "workspace 8: pidgin; exec pidgin"
 exec i3-msg "workspace 8: chat; exec rocketchat-desktop"
-exec i3-msg "workspace 10: htop; exec urxvt -e htop"
+exec i3-msg "workspace 10: top; exec urxvt -e bpytop"
 exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
 
 workspace $ws1 output DP2
