@@ -42,6 +42,7 @@ alias hibernate='sudo systemctl hibernate'
 alias showbrightness='cat /sys/class/backlight/amdgpu_bl1/brightness'
 alias activate_larch='source ~/larch_env/bin/activate && source ~/scripts/reset_ps1.sh'
 alias activate_easyxafs='source ~/easyxafs_env/bin/activate && source ~/scripts/reset_ps1.sh'
+alias check_bios_version='sudo dmidecode | grep -A3 'Vendor:\|Product:' && sudo lshw -C cpu | grep -A3 'product:\|vendor:''
 #
 #Get these scripts from your scripts git into ~/scripts and be happy
 alias nps='MakeNewPythonscript.sh'
