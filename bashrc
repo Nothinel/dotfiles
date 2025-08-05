@@ -26,7 +26,7 @@ PATH=$PATH:~/scripts
 # bashrc comes along (i.e. startup of new terminal window
 killall -q xbindkeys 
 xbindkeys
-
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 #
 #BASH behavior
 #
@@ -43,6 +43,8 @@ alias showbrightness='cat /sys/class/backlight/amdgpu_bl1/brightness'
 alias activate_larch='source ~/larch_env/bin/activate && source ~/scripts/reset_ps1.sh'
 alias activate_easyxafs='source ~/easyxafs_env/bin/activate && source ~/scripts/reset_ps1.sh'
 alias check_bios_version='sudo dmidecode | grep -A3 'Vendor:\|Product:' && sudo lshw -C cpu | grep -A3 'product:\|vendor:''
+alias activate_base='source ~/base_env/bin/activate && source ~/scripts/reset_ps1.sh'
+activate_base
 #
 #Get these scripts from your scripts git into ~/scripts and be happy
 alias nps='MakeNewPythonscript.sh'

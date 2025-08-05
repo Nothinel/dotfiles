@@ -161,7 +161,7 @@ bar {
 }
 
 # Move the current workspace to the next output
-# (effectively toggles when you only have two outputs)
+# (effectively toggles when you only have two outputs) tags: monitor Monitor
 bindsym $mod+x move workspace to output next
 
 exec i3-msg "workspace 10; exec nm-applet" #nm-applet first, so Network is priority
@@ -189,7 +189,7 @@ exec i3-msg "workspace 8; exec signal-desktop"
 
 #example of autorun commands for multiple screens displays monitors
 #exec xrandr --output HDMI2 --auto --right-of DP1
-exec xrandr --output eDP --scale 0.9x0.9
+#exec xrandr --output eDP --scale 0.9x0.9
 #autorun background stuff
 exec nextcloud
 #exec --no-startup-id xbindkeys
@@ -199,16 +199,18 @@ exec dunst
 
 #examples of sending the uneven workspaces to the left and the even nubered ones 
 #to the right screen display monitor
-#workspace $ws1 output DP1
-#workspace $ws2 output HDMI2
-#workspace $ws3 output DP1
-#workspace $ws4 output HDMI2
-#workspace $ws5 output DP1
-#workspace $ws6 output HDMI2
-#workspace $ws7 output DP1
-#workspace $ws8 output HDMI2
-#workspace $ws9 output DP1
-#workspace $ws10 output HDMI2
+#workspace $ws1 output DisplayPort-1
+#workspace $ws2 output eDP
+#workspace $ws3 output DisplayPort-1
+#workspace $ws4 output eDP
+#workspace $ws5 output DisplayPort-1
+#workspace $ws6 output DisplayPort-2
+#workspace $ws7 output DisplayPort-1
+#workspace $ws8 output DisplayPort-2
+#workspace $ws9 output DisplayPort-1
+#workspace $ws10 output DisplayPort-2
+
+
 
 #Example for locking the screen
 bindsym $mod+o exec i3lock -i ~/.config/i3/flip.png --color=000000
