@@ -179,7 +179,7 @@ bar {
         status_command i3status
 }
 
-exec xrandr --output DP2 --auto --left-of DP1
+exec xrandr --output DP-2 --auto --left-of DP-1
 exec nextcloud
 
 exec i3-msg "workspace 1: terminal; exec i3-sensible-terminal"
@@ -192,15 +192,15 @@ exec i3-msg "workspace 8: chat; exec rocketchat-desktop"
 exec i3-msg "workspace 10: top; exec urxvt -e bpytop"
 exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
 
-workspace $ws1 output DP2
-workspace $ws2 output DP1
-workspace $ws3 output DP2
-workspace $ws4 output DP1
-workspace $ws5 output DP2
-workspace $ws6 output DP1
-workspace $ws7 output DP2
-workspace $ws8 output DP1
-workspace $ws9 output DP2
-workspace $ws10 output DP1
+workspace $ws1 output DP-2
+workspace $ws2 output DP-1
+workspace $ws3 output DP-2
+workspace $ws4 output DP-1
+workspace $ws5 output DP-2
+workspace $ws6 output DP-1
+workspace $ws7 output DP-2
+workspace $ws8 output DP-1
+workspace $ws9 output DP-2
+workspace $ws10 output DP-1
 
 bindsym $mod+o exec i3lock --color=000000

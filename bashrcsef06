@@ -5,48 +5,45 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias grep='grep --color=auto'
+
+#Path Stuff
+#
 #Pythonverzeichniss einbinden
-PYTHONPATH="${PYTHONPATH}:/home/kr80cora/NextCloud/Dokumente/Python"
+#PYTHONPATH="${PYTHONPATH}:/home/kr80cora/NextCloud/Dokumente/Python"
+PYTHONPATH="${PYTHONPATH}:/home/kr80cora/Nextcloud/Dokumente/Python"
 PATH=$PATH:~/scripts
 PATH=$PATH:~/scripts/Auswertungsscripte/
 
 export PYTHONPATH
+# ssh keys via gnome keyring
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
+xset -b
 
+#
+#BASH behavior
+#
 set -o vi
 alias ls='lsd'
 #shopt -s autocd
+export EDITOR=vim
 #use zoxide as cd
 eval "$(zoxide init --cmd cd bash)"
 #use fzf
 eval "$(fzf --bash)"
 alias mute='amixer set Master mute'
 alias unmute='amixer set Master unmute && amixer set Speaker unmute'
-alias nps='MakeNewPythonscript.sh'
-alias nls='MakeNewLaTeXscript.sh'
-alias nbs='MakeNewBashscript.sh'
 alias rps1='source ~/scripts/reset_ps1.sh'
 alias libre='libreoffice'
 alias untar='tar -xvf'
+alias make_tar='tar -cf'
 alias quickjupyter='jupyter lab ~/NextCloud/Dokumente/Python/Calculator.ipynb'
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/kr80cora/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/kr80cora/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/kr80cora/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/kr80cora/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# automatically activate conda each start up of a bash with the xraylarch env
-conda activate xraylarch
+alias activate_larch='source ~/larch_env/bin/activate && source ~/scripts/reset_ps1.sh'
+alias activate_base='source ~/base_env/bin/activate && source ~/scripts/reset_ps1.sh'
+#activate_base
+activate_larch
 
 PATH="/home/kr80cora/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/kr80cora/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
@@ -62,7 +59,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/kr80cora/perl5"; export PERL_MM_OPT;
 seperator=$'\uE0B0' #arrow for cool factor
 CONDA_PROMPT_MODIFIER_MOD=${CONDA_PROMPT_MODIFIER::-1}
 #PS1='\[\e[48;5;40m\]\[\e[30m\][\u@\h \W]\n\[\e[48;5;40m\]\[\e[30m\]└─\$\[\e[00m\]\[\e[38;5;40m\]'$seperator'\[\e[00m\]'
-PS1='\[\e[48;5;34m\e[38;5;232m\]┌${CONDA_PROMPT_MODIFIER_MOD}\u\[\e[48;5;18m\e[38;5;34m\]'$seperator'\[\e[38;5;1m\]\h\[\e[48;5;34m\e[38;5;18m\]'$seperator'\[\e[48;5;34m\e[38;5;232m\]\w\[\e[48;2;0;0;0m\e[38;5;34m\]'$seperator'\n\[\e[48;5;34m\e[38;5;0m\]└─\$\[\e[48;5;232m\e[38;5;34m\]'$seperator'\[\e[48;2;0;0;0m\e[38;5;34m\]'
+PS1='\[\e[48;5;34m\e[38;5;232m\]┌>'$VIRTUAL_ENV_PROMPT'>\u\[\e[48;5;18m\e[38;5;34m\]'$seperator'\[\e[38;5;1m\]\h\[\e[48;5;34m\e[38;5;18m\]'$seperator'\[\e[48;5;34m\e[38;5;232m\]\w\[\e[48;2;0;0;0m\e[38;5;34m\]'$seperator'\n\[\e[48;5;34m\e[38;5;0m\]└─\$\[\e[48;5;232m\e[38;5;34m\]'$seperator'\[\e[48;2;0;0;0m\e[38;5;34m\]'
 #\[ \] has to encapsulate any part that does not produce characters but only changes colors etc.
 #\e[48;5;34m sets Background color in Ansi code (to some green in this case, try 46 for bright green, 232 for Black, 18 for blue)
 #\[\e[38;5;40m\] sets Text color (to green in this case) mainly to color the seperator

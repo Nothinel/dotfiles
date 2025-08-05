@@ -1,12 +1,10 @@
 let mapleader ="ö"
- 
+
 "Use Clipboard
 noremap <leader>y "*y
 noremap <leader>p "*p
 noremap <leader>Y "+Y
 noremap <leader>P "+P
-
-
 
 "mache unechte Zeilenumbrücke sichtbar, bei langen Zeilen
 set breakindent
@@ -49,7 +47,7 @@ set spelllang=en,de
 
 "Python syntax or else
 syntax on
-"filetype indent plugin on
+filetype indent plugin on
 
 "Spellchecking for .tex docs
 autocmd FileType tex setlocal spell spelllang=en_us,de
@@ -60,7 +58,6 @@ autocmd BufRead,BufNewFile *.txt setlocal spell
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-" let g:tex_flavor = "lualatex"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 let g:Tex_MultipleCompileFormats = 'pdf'
 let g:Tex_DefaultTargetFormat = "pdf"
@@ -86,10 +83,10 @@ map <leader><leader> <Esc>/<+.*+><Enter>"_cf>
 "Set Tab and Shiftwidth to 4 spaces (tab)
 set ts=4 sw=4
 
-" Execute current script by pressing F9
-nnoremap <F9> :w<Enter>:!%:p<Enter><Enter>
+" Execute current script by pressing F9 and imediatly close output
+nnoremap <F9> :w<Enter>:!python %:p<Enter><Enter>
 " Execute current script by pressing F10 and wait for output
-nnoremap <F10> :w<Enter>:!%:p<Enter>
+nnoremap <F10> :w<Enter>:!python %:p<Enter>
 
 " Kommentiere Blöcke Comment Blocks
 vnoremap <leader>%% :s/^%//<Enter>:noh<Enter>
@@ -111,9 +108,6 @@ noremap <leader><Space><Space> /^$<Enter>
 
  " Input Angstrom angstrom Angström angström
 inoremap <leader>AA Å
-
-
-"this is a test text
 
 " Highlight all search pattern matches 
 set nohlsearch
@@ -142,17 +136,14 @@ noremap <leader>se )i<Enter><Esc>(visgq
 " Starte scrollen wenn man in die Nähe des Bodens kommt
 " offset gilt leider auch für H und L was mir nicht gefällt
 "set scrolloff=5 
-
 " For Autocompletition with TAB install vim-supertab via pacman 
-" Furthermore this option will power up the ctrl+p completition
-set complete=.,w,b,u,t,i,kspell
-
-" Colorscheme installed via the own package manager
-" packadd! dracula
-" colorscheme dracula
-
-" noremap <leader>cp :! cp ExPhyII_SoSe_2024.pdf ../2024/ExPhyII_SoSe_2024_Blatt
-noremap <leader>cp :! cp ExPhyI_WiSe_2024.pdf ../2024/ExPhyI_WiSe_2024_Blatt
+" To learn about vim plugin manager
+" https://linoxide.com/how-to-install-vim-plugins/
+" call plug#begin()
+" Plug 'davidhalter/jedi-vim'
+" call plug#end()
+noremap <leader>cp :! cp ExPhyII_SoSe_2025.pdf ../2025/ExPhyII_SoSe_2025_Blatt
+" noremap <leader>cp :! cp ExPhyI_WiSe_2024.pdf ../2024/ExPhyI_WiSe_2024_Blatt
 noremap <leader>ca :! ./copyall2Nextcloud.sh
 noremap <leader>blk :! black --line-length 79 %
 
