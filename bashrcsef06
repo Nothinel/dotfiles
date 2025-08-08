@@ -45,6 +45,8 @@ alias activate_base='source ~/base_env/bin/activate && source ~/scripts/reset_ps
 #activate_base
 activate_larch
 
+alias jfeff='java -jar ~/JFEFF/Jfeff.jar'
+
 PATH="/home/kr80cora/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/kr80cora/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/kr80cora/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
