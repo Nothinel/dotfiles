@@ -19,7 +19,8 @@ export PYTHONPATH
 # ssh keys via gnome keyring
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
-xset -b
+# old method for turning off bell bios beep
+#xset -b
 
 #
 #BASH behavior
