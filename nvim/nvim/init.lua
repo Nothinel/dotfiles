@@ -1,5 +1,0 @@
-require('config.options')
-require('config.keybindings')
-require('config.lazy')
-require('lualine').setup()
-require('bufferline').setup()
