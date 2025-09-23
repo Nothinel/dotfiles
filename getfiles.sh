@@ -9,3 +9,4 @@ cp ~/.config/dunst/dunstrc ./
 cp ~/.xbindkeysrc ./xbindkeysrc
 cp ~/.xinitrc ./xinitrc
 cp -r ~/.config/nvim ./nvim
+cp ~/.config/kitty/kitty.conf ./
