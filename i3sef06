@@ -22,7 +22,7 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -182,14 +182,14 @@ bar {
 exec xrandr --output DP-2 --auto --left-of DP-1
 exec nextcloud
 
-exec i3-msg "workspace 1: terminal; exec i3-sensible-terminal"
+exec i3-msg "workspace 1: terminal; exec kitty"
 exec i3-msg "workspace 2: firefox; exec firefox"
-exec i3-msg "workspace 3: work; exec i3-sensible-terminal"
+exec i3-msg "workspace 3: work; exec kitty"
 exec i3-msg "workspace 4: thunderbird; exec thunderbird"
 #exec i3-msg "workspace 5: jabref; exec jabref"
 #exec i3-msg "workspace 8: pidgin; exec pidgin"
 exec i3-msg "workspace 8: chat; exec rocketchat-desktop"
-exec i3-msg "workspace 10: top; exec urxvt -e bpytop"
+exec i3-msg "workspace 10: top; exec kitty bpytop"
 exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
 
 workspace $ws1 output DP-2

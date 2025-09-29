@@ -28,7 +28,7 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 set -o vi
 alias ls='lsd'
 #shopt -s autocd
-export EDITOR=vim
+export EDITOR=nvim
 #use zoxide as cd
 eval "$(zoxide init --cmd cd bash)"
 #use fzf

@@ -9,6 +9,8 @@ cp ~/.Xresources ./Xresourcessef06
 cp ~/.bashrc ./bashrcsef06
 cp ~/.bash_profile ./bash_profilesef06
 cp ~/.xinitrc ./xinitrcsef06
+cp ~/.config/kitty/kitty.conf ./
 # cp ~/.config/dunst/dunstrc ./dunstrc
 #
 cp -r ~/.config/nvim ./
+

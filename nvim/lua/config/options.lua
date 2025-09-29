@@ -9,8 +9,8 @@ vim.opt.autoindent = true
 vim.opt.list = true --show trailing whitespace · and tabs as "» "
 vim.opt.listchars = { tab = '» ', trail = '·'}
 
-vim.opt.ignorecase = true -- ignore case when searching
-vim.opt.smartcase = true -- except when using capital letters
+-- vim.opt.ignorecase = true -- ignore case when searching
+-- vim.opt.smartcase = true -- except when using capital letters
 
 vim.opt.hlsearch = false -- no highlight of all found cases of last search
 vim.opt.incsearch = true -- show found instansces while typing in the search
@@ -41,7 +41,23 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 
--- python language server
+-- python language servers
+--
+vim.lsp.config('ruff', {
+  cmd = {'ruff', "server"},
+  filetypes = {'python', "py"},
+  root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git" },
+  init_options = {
+    settings = {
+      -- Ruff language server settings go here
+      format = {
+        ["quote-style"] = "single"
+      }
+    }
+  }
+})
+vim.lsp.enable('ruff')
+
 vim.lsp.config('jedi_language_server', {
   cmd = {'jedi-language-server'},
   filetypes = {'python', "py"},
@@ -51,4 +67,5 @@ vim.lsp.enable('jedi_language_server')
 
 -- stuff to install
 -- jedi-language-server
+-- ruff
 -- ripgrep
