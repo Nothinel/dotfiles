@@ -6,6 +6,10 @@ return {
     config = function()
       require("onedark").setup({
         style = "darker",
+        colors = {
+          black = "#000000",
+          fg = "#00dd00",
+        },
       })
       -- Enable theme
       require("onedark").load()
