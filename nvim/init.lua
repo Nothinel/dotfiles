@@ -1,5 +1,2 @@
-require('config.options')
-require('config.keybindings')
-require('config.lazy')
-require('lualine').setup()
-require('bufferline').setup()
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
