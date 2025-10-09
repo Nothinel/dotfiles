@@ -3,3 +3,4 @@
 -- Add any additional options here
 --
 vim.g.maplocalleader = "ö"
+vim.opt.wrap = true
