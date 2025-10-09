@@ -9,6 +9,12 @@ return {
         colors = {
           black = "#000000",
           fg = "#00dd00",
+          bg0 = "#000000",
+          grey = "#008800",
+        },
+        highlights = {
+          ["@lsp.type.comment"] = { fg = "#00aa00" },
+          ["@comment"] = { fg = "#00bb00" },
         },
       })
       -- Enable theme
