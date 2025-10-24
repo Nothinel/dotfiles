@@ -43,10 +43,27 @@ vim.keymap.set(
   ":%s/INCLUDESOLUTIONStrue/INCLUDESOLUTIONSfalse/<Enter>:update<Enter><C-o>",
   { desc = "EP: exclude solutions" }
 )
---":%s/<Bslash>(<Bslash><Bslash>SERIE[IVX]<Bslash>+<Bslash>)true/<Bslash>1false/<Enter>:%s/<Bslash>(<Bslash><Bslash>SERIEI<Bslash>)false/<Bslash>1true/<Enter>:update<Enter><C-o>",
 vim.keymap.set("n", "<localleader>ss", function()
   local expr = vim.fn.input("roman number of series?: ")
   vim.cmd([[%s/\(\SERIE[IVX]\+\)true/\1false/]])
   vim.cmd(string.format("%%s/\\vSERIE%sfalse/SERIE%strue/", expr, expr))
+  vim.cmd("normal! <C-o><C-o>")
   vim.cmd("update")
 end, { desc = "EP: select series" })
+vim.keymap.set("n", "<localleader>so", function()
+  local expr = vim.fn.input("which task number?")
+  --vim.cmd(string.format("/task{[MZAWLE]}{%s}", expr))
+  local line = vim.fn.search(string.format("task{[MZAWLE]}{%s}", expr))
+  if line == 0 then
+    print("did not find task")
+    return
+  end
+  local linetext = vim.fn.getline(line)
+  local path, filename = linetext:match(string.format("\\task{[MZAWLE]}{%s}{}{%%s*([^}]+)%%s*}{%%s*([^}]+)%%s*}", expr))
+  if not path or not filename then
+    print("unable to extract filename or path from line")
+    return
+  end
+  local fullpath = string.format("%s/%s.tex", path, filename)
+  vim.cmd("edit " .. fullpath)
+end, { desc = "EP: open task", silent = true })
