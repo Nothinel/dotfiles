@@ -8,5 +8,6 @@ cp ~/.config/i3status/config ./i3status
 cp ~/.config/dunst/dunstrc ./
 cp ~/.xbindkeysrc ./xbindkeysrc
 cp ~/.xinitrc ./xinitrc
+rm -r nvim
 cp -r ~/.config/nvim ./
 cp ~/.config/kitty/kitty.conf ./

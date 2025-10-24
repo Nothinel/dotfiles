@@ -14,6 +14,6 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", [["*y]])
 -- LaTeX replace Umlaut
 vim.keymap.set(
   "n",
-  "<leader>uu",
+  "<localleader>uu",
   ':%s/ß/{<Bslash><Bslash>ss}/ge<Enter>:%s/ä/{<Bslash><Bslash>"a}/ge<Enter>:%s/Ä/{<Bslash><Bslash>"A}/ge<Enter>:%s/ö/{<Bslash><Bslash>"o}/ge<Enter>:%s/Ö/{<Bslash><Bslash>"O}/ge<Enter>:%s/ü/{<Bslash><Bslash>"u}/ge<Enter>:%s/Ü/{<Bslash><Bslash>"U}/ge<Enter>'
 )
