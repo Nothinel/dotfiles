@@ -9,5 +9,5 @@ cp ~/.config/dunst/dunstrc ./
 cp ~/.xbindkeysrc ./xbindkeysrc
 cp ~/.xinitrc ./xinitrc
 rm -r nvim
-cp -r ~/.config/nvim ./
+rsync -avhH --delete ~/.config/nvim ./
 cp ~/.config/kitty/kitty.conf ./

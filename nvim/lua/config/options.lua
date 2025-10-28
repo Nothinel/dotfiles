@@ -4,3 +4,7 @@
 --
 vim.g.maplocalleader = "ö"
 vim.opt.wrap = true
+vim.g.snacks_animate = false
+vim.o.wildmode = "longest:list,full"
+--vim.o.wildmenu = true
+vim.o.wildoptions = ""
