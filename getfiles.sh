@@ -12,5 +12,5 @@ cp ~/.xinitrc ./xinitrcsef06
 cp ~/.config/kitty/kitty.conf ./
 # cp ~/.config/dunst/dunstrc ./dunstrc
 #
-cp -r ~/.config/nvim ./
-
+rsync -avhH --delete ~/.config/nvim ./
+rsync -avhH --delete ~/.config/latexindent ./
