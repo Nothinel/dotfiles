@@ -51,17 +51,16 @@ vim.keymap.set("n", "<localleader>ss", function()
   vim.api.nvim_win_set_cursor(0, cursorpos)
   vim.cmd("update")
 end, { desc = "EP: select series" })
+
 vim.keymap.set("n", "<localleader>so", function()
   local expr = vim.fn.input("which task number?")
-  --vim.cmd(string.format("/task{[MZAWLE]}{%s}", expr))
-  local line = vim.fn.search(string.format("task{[MZAWLE]}{%s}", expr))
+  local line = vim.fn.search(string.format("task\\*\\?{[MZAWLE]\\+}{%s}", expr))
   if line == 0 then
     print("did not find task")
     return
   end
   local linetext = vim.fn.getline(line)
-  local path, filename =
-    linetext:match(string.format("\\task{[MZAWLE]}{%s}{.-}{%%s*([^}]+)%%s*}{%%s*([^}]+)%%s*}", expr))
+  local path, filename = linetext:match(string.format("{%s}{.-}{%%s*([^}]+)%%s*}{%%s*([^}]+)%%s*}", expr))
   if not path or not filename then
     print("unable to extract filename or path from line")
     return
@@ -69,6 +68,7 @@ vim.keymap.set("n", "<localleader>so", function()
   local fullpath = string.format("%s/%s.tex", path, filename)
   vim.cmd("edit " .. fullpath)
 end, { desc = "EP: open task", silent = true })
+
 -- Keymap: run latexindent on the current file
 vim.keymap.set("n", "<localleader>lf", function()
   local filename = vim.fn.expand("%:p")

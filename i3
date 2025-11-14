@@ -70,10 +70,10 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:term"
-set $ws2 "2:firefox"
-set $ws3 "3:work"
-set $ws4 "4:thunderbird"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -166,15 +166,15 @@ bindsym $mod+x move workspace to output next
 
 exec i3-msg "workspace 10; exec nm-applet" #nm-applet first, so Network is priority
 exec i3-msg "workspace 10; exec blueman-applet"
-exec i3-msg "workspace 1:term; exec kitty"
+exec i3-msg "workspace 1; exec kitty"
 # save window config as it currently is to file:
 # i3-save-tree --workspace 2:firefox > ~/.config/i3/workspace-1.json
 # now edit manually: remove all comments (// lines), names= lines and chose which criteria to swallow
 # see i3 manual
-exec --no-startup-id "i3-msg 'workspace 2:firefox; append_layout /home/konrad/.config/i3/workspace-1.json'"
-exec i3-msg "workspace 2:firefox; exec firefox"
-exec i3-msg "workspace 3:work; exec kitty"
-exec i3-msg "workspace 4:thunderbird; exec thunderbird"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/konrad/.config/i3/workspace-1.json'"
+exec i3-msg "workspace 2; exec firefox"
+exec i3-msg "workspace 3; exec kitty"
+exec i3-msg "workspace 4; exec thunderbird"
 #exec i3-msg "workspace 5: jabref; exec jabref"
 #exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
 exec i3-msg "workspace 10; exec xss-lock -- i3lock -i ~/.config/i3/flip.png --color=000000"
@@ -199,16 +199,16 @@ exec dunst
 
 #examples of sending the uneven workspaces to the left and the even nubered ones 
 #to the right screen display monitor
-#workspace $ws1 output DisplayPort-1
-#workspace $ws2 output eDP
-#workspace $ws3 output DisplayPort-1
-#workspace $ws4 output eDP
-#workspace $ws5 output DisplayPort-1
-#workspace $ws6 output DisplayPort-2
-#workspace $ws7 output DisplayPort-1
-#workspace $ws8 output DisplayPort-2
-#workspace $ws9 output DisplayPort-1
-#workspace $ws10 output DisplayPort-2
+# workspace $ws1 output DisplayPort-2
+# workspace $ws2 output eDP
+# workspace $ws3 output DisplayPort-2
+# workspace $ws4 output eDP
+# workspace $ws5 output DisplayPort-2
+# workspace $ws6 output eDP
+# workspace $ws7 output DisplayPort-2
+# workspace $ws8 output eDP
+# workspace $ws9 output DisplayPort-2
+# workspace $ws10 output eDP
 
 
 
