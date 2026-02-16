@@ -172,6 +172,7 @@ exec i3-msg "workspace 1; exec kitty"
 # now edit manually: remove all comments (// lines), names= lines and chose which criteria to swallow
 # see i3 manual
 exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/konrad/.config/i3/workspace-1.json'"
+exec i3-msg "workspace 8; exec signal-desktop"
 exec i3-msg "workspace 2; exec firefox"
 exec i3-msg "workspace 3; exec kitty"
 exec i3-msg "workspace 4; exec thunderbird"
@@ -180,11 +181,11 @@ exec i3-msg "workspace 4; exec thunderbird"
 exec i3-msg "workspace 10; exec xss-lock -- i3lock -i ~/.config/i3/flip.png --color=000000"
 #exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && urxvt -e htop"
 exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && kitty -e bpytop"
+exec i3-msg "workspace 10; exec kitty -e battop"
 # audio
 exec i3-msg "workspace 10; exec pasystray"
 #exec i3-msg "workspace 10; exec urxvt -e alsamixer"
 #exec i3-msg "workspace 10; exec pavucontrol"
-exec i3-msg "workspace 8; exec signal-desktop"
 
 
 #example of autorun commands for multiple screens displays monitors
