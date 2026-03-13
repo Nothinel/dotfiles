@@ -54,7 +54,7 @@ end, { desc = "EP: select series" })
 
 vim.keymap.set("n", "<localleader>so", function()
   local expr = vim.fn.input("which task number?")
-  local line = vim.fn.search(string.format("task\\*\\?{[MZAWLE]\\+}{%s}", expr))
+  local line = vim.fn.search(string.format("task\\*\\?{[MZAWLEK]\\+}{%s}", expr))
   if line == 0 then
     print("did not find task")
     return
