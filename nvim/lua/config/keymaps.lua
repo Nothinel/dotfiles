@@ -18,11 +18,12 @@ vim.keymap.set(
   ':%s/ß/{<Bslash><Bslash>ss}/Ige<Enter>:%s/ä/{<Bslash><Bslash>"a}/Ige<Enter>:%s/Ä/{<Bslash><Bslash>"A}/Ige<Enter>:%s/ö/{<Bslash><Bslash>"o}/Ige<Enter>:%s/Ö/{<Bslash><Bslash>"O}/Ige<Enter>:%s/ü/{<Bslash><Bslash>"u}/Ige<Enter>:%s/Ü/{<Bslash><Bslash>"U}/Ige<Enter>',
   { desc = "replace umlauts in LaTeX" }
 )
+vim.keymap.set("n", "<localleader><Tab>", '<Esc>/<++><CR>"_c4l', { desc = "replace umlauts in LaTeX" })
 -- EP
 vim.keymap.set(
   "n",
   "<localleader>cp",
-  ":! cp ExPhyI_WiSe_2025.pdf ../2025/ExPhyI_WiSe_2025_Blatt",
+  ":! cp ExPhyII_SoSe_2026.pdf ../2026/ExPhyII_SoSe_2026_Blatt",
   { desc = "copy current pdf to local year folder" }
 )
 vim.keymap.set(
