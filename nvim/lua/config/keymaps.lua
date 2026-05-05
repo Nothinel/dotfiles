@@ -15,9 +15,10 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", [["*y]])
 vim.keymap.set(
   "n",
   "<localleader>uu",
-  ':%s/ß/{<Bslash><Bslash>ss}/ge<Enter>:%s/ä/{<Bslash><Bslash>"a}/ge<Enter>:%s/Ä/{<Bslash><Bslash>"A}/ge<Enter>:%s/ö/{<Bslash><Bslash>"o}/ge<Enter>:%s/Ö/{<Bslash><Bslash>"O}/ge<Enter>:%s/ü/{<Bslash><Bslash>"u}/ge<Enter>:%s/Ü/{<Bslash><Bslash>"U}/ge<Enter>',
+  ':%s/ß/{<Bslash><Bslash>ss}/Ige<Enter>:%s/ä/{<Bslash><Bslash>"a}/Ige<Enter>:%s/Ä/{<Bslash><Bslash>"A}/Ige<Enter>:%s/ö/{<Bslash><Bslash>"o}/Ige<Enter>:%s/Ö/{<Bslash><Bslash>"O}/Ige<Enter>:%s/ü/{<Bslash><Bslash>"u}/Ige<Enter>:%s/Ü/{<Bslash><Bslash>"U}/Ige<Enter>',
   { desc = "replace umlauts in LaTeX" }
 )
+vim.keymap.set("n", "<localleader><Tab>", '<Esc>/<++><CR>"_c4l', { desc = "replace umlauts in LaTeX" })
 -- EP
 vim.keymap.set(
   "n",
@@ -54,7 +55,7 @@ end, { desc = "EP: select series" })
 
 vim.keymap.set("n", "<localleader>so", function()
   local expr = vim.fn.input("which task number?")
-  local line = vim.fn.search(string.format("task\\*\\?{[MZAWLE]\\+}{%s}", expr))
+  local line = vim.fn.search(string.format("task\\*\\?{[MZAWLEK]\\+}{%s}", expr))
   if line == 0 then
     print("did not find task")
     return

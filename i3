@@ -164,7 +164,7 @@ bar {
 # (effectively toggles when you only have two outputs) tags: monitor Monitor
 bindsym $mod+x move workspace to output next
 
-exec i3-msg "workspace 10; exec nm-applet" #nm-applet first, so Network is priority
+exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && kitty -e bpytop"
 exec i3-msg "workspace 10; exec blueman-applet"
 exec i3-msg "workspace 1; exec kitty"
 # save window config as it currently is to file:
@@ -180,7 +180,6 @@ exec i3-msg "workspace 4; exec thunderbird"
 #exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
 exec i3-msg "workspace 10; exec xss-lock -- i3lock -i ~/.config/i3/flip.png --color=000000"
 #exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && urxvt -e htop"
-exec i3-msg "workspace 10; exec dbus-update-activation-environment --all && gnome-keyring-daemon --start --components=secrets && kitty -e bpytop"
 exec i3-msg "workspace 10; exec kitty -e battop"
 # audio
 exec i3-msg "workspace 10; exec pasystray"
@@ -192,6 +191,7 @@ exec i3-msg "workspace 10; exec pasystray"
 #exec xrandr --output HDMI2 --auto --right-of DP1
 #exec xrandr --output eDP --scale 0.9x0.9
 #autorun background stuff
+exec i3-msg "workspace 10; exec nm-applet" #nm-applet  last , especially after unlocking keyring(first, so Network is priority)
 exec nextcloud
 #exec --no-startup-id xbindkeys
 #exec --no-startup-id "/home/konrad/scripts/bindkeys.sh"
