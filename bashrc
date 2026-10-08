@@ -7,11 +7,9 @@
 
 #if [ "$(tty)" = "/dev/tty1" ]; then
 #	startx
-#fi   
+#fi
 
 alias grep='grep --color=auto'
-
-
 
 #Path Stuff
 #
@@ -24,7 +22,7 @@ PATH=$PATH:~/scripts
 # xbindkeys needs the scripts it wants to use to be in path before it is
 # started, this should happen by restarting it every time a new execution of
 # bashrc comes along (i.e. startup of new terminal window
-killall -q xbindkeys 
+killall -q xbindkeys
 xbindkeys
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 #
@@ -41,9 +39,11 @@ alias hibernate='sudo systemctl hibernate'
 #SHORTCUTS
 alias showbrightness='cat /sys/class/backlight/amdgpu_bl1/brightness'
 alias activate_larch='source ~/larch_env/bin/activate && source ~/scripts/reset_ps1.sh'
+alias activate_test='source ~/test_env/bin/activate && source ~/scripts/reset_ps1.sh'
 alias activate_easyxafs='source ~/easyxafs_env/bin/activate && source ~/scripts/reset_ps1.sh'
 alias check_bios_version='sudo dmidecode | grep -A3 'Vendor:\|Product:' && sudo lshw -C cpu | grep -A3 'product:\|vendor:''
 alias activate_base='source ~/base_env/bin/activate && source ~/scripts/reset_ps1.sh'
+alias adobe='acroread-dc'
 activate_base
 #
 #Get these scripts from your scripts git into ~/scripts and be happy

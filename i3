@@ -200,17 +200,17 @@ exec dunst
 
 #examples of sending the uneven workspaces to the left and the even nubered ones 
 #to the right screen display monitor
-# workspace $ws1 output DisplayPort-2
-# workspace $ws2 output eDP
-# workspace $ws3 output DisplayPort-2
-# workspace $ws4 output eDP
-# workspace $ws5 output DisplayPort-2
-# workspace $ws6 output eDP
-# workspace $ws7 output DisplayPort-2
-# workspace $ws8 output eDP
-# workspace $ws9 output DisplayPort-2
-# workspace $ws10 output eDP
-
+# workspace $ws1 output eDP
+# workspace $ws2 output DisplayPort-1
+# workspace $ws3 output eDP
+# workspace $ws4 output DisplayPort-1
+# workspace $ws5 output eDP
+# workspace $ws6 output DisplayPort-1
+# workspace $ws7 output eDP
+# workspace $ws8 output DisplayPort-1
+# workspace $ws9 output eDP
+# workspace $ws10 output DisplayPort-1
+#
 
 
 #Example for locking the screen
