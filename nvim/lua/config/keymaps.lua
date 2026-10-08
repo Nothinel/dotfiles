@@ -78,3 +78,12 @@ vim.keymap.set("n", "<localleader>lf", function()
   vim.cmd("edit!") -- reload the buffer
   print("Formatted with latexindent")
 end, { desc = "Format with latexindent" })
+
+vim.keymap.set("n", "<leader>md", function()
+  local file = vim.fn.expand("%:p")
+  local output = vim.fn.expand("%:r") .. ".pdf"
+  local cmd =
+    string.format("pandoc %s -o %s --pdf-engine=pdflatex", vim.fn.shellescape(file), vim.fn.shellescape(output))
+  vim.fn.system(cmd)
+  print("Converted to " .. output)
+end, { desc = "Convert Markdown to PDF" })
