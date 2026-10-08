@@ -36,10 +36,12 @@ eval "$(fzf --bash)"
 alias mute='amixer set Master mute'
 alias unmute='amixer set Master unmute && amixer set Speaker unmute'
 alias rps1='source ~/scripts/reset_ps1.sh'
-alias libre='libreoffice'
+#alias libre='libreoffice'
+alias adobe='acroread-dc'
 alias untar='tar -xvf'
 alias make_tar='tar -cf'
 alias quickjupyter='jupyter lab ~/NextCloud/Dokumente/Python/Calculator.ipynb'
+alias envln='ln -s ~/NextCloud/Dokumente/Python/VGUI/test/.env .env'
 
 alias activate_larch='source ~/larch_env/bin/activate && source ~/scripts/reset_ps1.sh'
 alias activate_base='source ~/base_env/bin/activate && source ~/scripts/reset_ps1.sh'
@@ -48,11 +50,16 @@ activate_larch
 
 alias jfeff='java -jar ~/JFEFF/Jfeff.jar'
 
-PATH="/home/kr80cora/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/kr80cora/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/kr80cora/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/kr80cora/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/kr80cora/perl5"; export PERL_MM_OPT;
+PATH="/home/kr80cora/perl5/bin${PATH:+:${PATH}}"
+export PATH
+PERL5LIB="/home/kr80cora/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+export PERL5LIB
+PERL_LOCAL_LIB_ROOT="/home/kr80cora/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+export PERL_LOCAL_LIB_ROOT
+PERL_MB_OPT="--install_base \"/home/kr80cora/perl5\""
+export PERL_MB_OPT
+PERL_MM_OPT="INSTALL_BASE=/home/kr80cora/perl5"
+export PERL_MM_OPT
 
 #Make the beginning of the terminal line look good and short
 #PS1='[\u@\h \W]\n\$ '
@@ -68,4 +75,3 @@ PS1='\[\e[48;5;34m\e[38;5;232m\]┌>'$VIRTUAL_ENV_PROMPT'>\u\[\e[48;5;18m\e[38;5
 #\[\e[38;5;40m\] sets Text color (to green in this case) mainly to color the seperator
 #\e[48;2;0;0;0m sets Background color for RGB values 0;0;0
 export PROMPT_DIRTRIM=2
-

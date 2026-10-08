@@ -188,7 +188,7 @@ exec i3-msg "workspace 3: work; exec kitty"
 exec i3-msg "workspace 4: thunderbird; exec thunderbird"
 #exec i3-msg "workspace 5: jabref; exec jabref"
 #exec i3-msg "workspace 8: pidgin; exec pidgin"
-exec i3-msg "workspace 8: chat; exec rocketchat-desktop"
+#exec i3-msg "workspace 8: chat; exec rocketchat-desktop"
 exec i3-msg "workspace 10: top; exec kitty bpytop"
 exec i3-msg "workspace 10; exec xss-lock -- i3lock --color=000000"
 
