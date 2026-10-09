@@ -20,12 +20,7 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<localleader><Tab>", '<Esc>/<++><CR>"_c4l', { desc = "replace umlauts in LaTeX" })
 -- EP
-vim.keymap.set(
-  "n",
-  "<localleader>cp",
-  ":! cp ExPhyII_SoSe_2026.pdf ../2026/ExPhyII_SoSe_2026_Blatt",
-  { desc = "copy current pdf to local year folder" }
-)
+vim.keymap.set("n", "<localleader>cp", ":! python copy_pdfs.py", { desc = "copy current pdf to local year folder" })
 vim.keymap.set(
   "n",
   "<localleader>ca",
