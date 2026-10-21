@@ -36,7 +36,7 @@ end
 vim.keymap.set("n", "<localleader>cp", execute_copy_pdfs, { desc = "copy current pdf to local year folder" })
 
 local function execute_copy_all_to_nextcloud()
-  vim.cmd("! ./copyall2Nextcloud.sh |")
+  vim.cmd("! ./copyall2Nextcloud.sh")
   print("copied pdfs to shared cloud folder")
 end
 vim.keymap.set("n", "<localleader>ca", execute_copy_all_to_nextcloud, { desc = "EP: sync local with shared folder" })
