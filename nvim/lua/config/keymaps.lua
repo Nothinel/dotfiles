@@ -19,26 +19,60 @@ vim.keymap.set(
   { desc = "replace umlauts in LaTeX" }
 )
 vim.keymap.set("n", "<localleader><Tab>", '<Esc>/<++><CR>"_c4l', { desc = "replace umlauts in LaTeX" })
+-- Keymap: run latexindent on the current file
+vim.keymap.set("n", "<localleader>lf", function()
+  local filename = vim.fn.expand("%:p")
+  vim.cmd("silent! write") -- save first
+  vim.fn.system({ "latexindent", "-m", "-w", "-c=/home/kr80cora/NextCloud/Dokumente/latex_backups", filename })
+  vim.cmd("edit!") -- reload the buffer
+  print("Formatted with latexindent")
+end, { desc = "Format with latexindent" })
+
 -- EP
-vim.keymap.set("n", "<localleader>cp", ":! python copy_pdfs.py", { desc = "copy current pdf to local year folder" })
-vim.keymap.set(
-  "n",
-  "<localleader>ca",
-  ":! ./copyall2Nextcloud.sh <Enter>",
-  { desc = "EP: sync local with shared folder" }
-)
-vim.keymap.set(
-  "n",
-  "<localleader>sy",
-  ":%s/INCLUDESOLUTIONSfalse/INCLUDESOLUTIONStrue/<Enter>:update<Enter><C-o>",
-  { desc = "EP: include solutions" }
-)
-vim.keymap.set(
-  "n",
-  "<localleader>sn",
-  ":%s/INCLUDESOLUTIONStrue/INCLUDESOLUTIONSfalse/<Enter>:update<Enter><C-o>",
-  { desc = "EP: exclude solutions" }
-)
+local function execute_copy_pdfs()
+  vim.cmd("!python copy_pdfs.py")
+  print("copied pdfs to cloud folder")
+end
+vim.keymap.set("n", "<localleader>cp", execute_copy_pdfs, { desc = "copy current pdf to local year folder" })
+
+local function execute_copy_all_to_nextcloud()
+  vim.cmd("! ./copyall2Nextcloud.sh |")
+  print("copied pdfs to shared cloud folder")
+end
+vim.keymap.set("n", "<localleader>ca", execute_copy_all_to_nextcloud, { desc = "EP: sync local with shared folder" })
+
+local function include_solutions()
+  vim.cmd([[:%s/INCLUDESOLUTIONSfalse/INCLUDESOLUTIONStrue/e]])
+  vim.cmd(":update")
+  vim.api.nvim_input("<C-o>")
+  print("Included solutions")
+end
+vim.keymap.set("n", "<localleader>sy", include_solutions, { desc = "EP: include solutions" })
+
+local function exclude_solutions()
+  vim.cmd([[:%s/INCLUDESOLUTIONStrue/INCLUDESOLUTIONSfalse/e]])
+  vim.cmd(":update")
+  vim.api.nvim_input("<C-o>")
+  print("Excluded solutions")
+end
+vim.keymap.set("n", "<localleader>sn", exclude_solutions, { desc = "EP: exclude solutions" })
+
+local function publish_solutions()
+  vim.cmd([[:%s/PUBLISHSOLUTIONSfalse/PUBLISHSOLUTIONStrue/e]])
+  vim.cmd(":update")
+  vim.api.nvim_input("<C-o>")
+  print("Solutions for publication")
+end
+vim.keymap.set("n", "<localleader>spy", publish_solutions, { desc = "EP: solutions for publication" })
+
+local function internal_solutions()
+  vim.cmd([[:%s/PUBLISHSOLUTIONStrue/PUBLISHSOLUTIONSfalse/e]])
+  vim.cmd(":update")
+  vim.api.nvim_input("<C-o>")
+  print("Solutions for internal use")
+end
+vim.keymap.set("n", "<localleader>spn", internal_solutions, { desc = "EP: solutions for internal use" })
+
 vim.keymap.set("n", "<localleader>ss", function()
   local expr = vim.fn.input("roman number of series?: ")
   local cursorpos = vim.api.nvim_win_get_cursor(0)
@@ -50,7 +84,7 @@ end, { desc = "EP: select series" })
 
 vim.keymap.set("n", "<localleader>so", function()
   local expr = vim.fn.input("which task number?")
-  local line = vim.fn.search(string.format("task\\*\\?{[MZAWLEK]\\+}{%s}", expr))
+  local line = vim.fn.search(string.format("task\\*\\?{[AEHKLMPWZ]\\+}{%s}", expr))
   if line == 0 then
     print("did not find task")
     return
@@ -65,15 +99,21 @@ vim.keymap.set("n", "<localleader>so", function()
   vim.cmd("edit " .. fullpath)
 end, { desc = "EP: open task", silent = true })
 
--- Keymap: run latexindent on the current file
-vim.keymap.set("n", "<localleader>lf", function()
-  local filename = vim.fn.expand("%:p")
-  vim.cmd("silent! write") -- save first
-  vim.fn.system({ "latexindent", "-m", "-w", "-c=/home/kr80cora/NextCloud/Dokumente/latex_backups", filename })
-  vim.cmd("edit!") -- reload the buffer
-  print("Formatted with latexindent")
-end, { desc = "Format with latexindent" })
+vim.keymap.set("n", "<localleader>ff", function()
+  exclude_solutions()
+  -- vim.defer_fn(execute_copy_pdfs, 3000)
+  vim.defer_fn(function()
+    execute_copy_pdfs()
+    vim.defer_fn(function()
+      include_solutions()
+      vim.defer_fn(function()
+        execute_copy_pdfs()
+      end, 5000)
+    end, 1000)
+  end, 5000)
+end, { desc = "Compile with and without solutions and copy those pdfs to cloud and shared storage" })
 
+-- Markdown
 vim.keymap.set("n", "<leader>md", function()
   local file = vim.fn.expand("%:p")
   local output = vim.fn.expand("%:r") .. ".pdf"
